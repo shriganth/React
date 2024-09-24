@@ -2,7 +2,7 @@ import React from "react";
 
 function Result({secretnumber, term}) {
 
-    let result = ""
+    let result;
 
     if (term) {
         if (term > secretnumber) {
@@ -11,8 +11,11 @@ function Result({secretnumber, term}) {
         else if (term < secretnumber) {
             result = "Lower";
         }
-        else {
+        else if (term === secretnumber) {
             result = "Match";
+        }
+        else {
+            result = "Please, Enter a valid number"
         }
     }
     else {
